@@ -11,6 +11,6 @@ import (
 func main() {
 	// log.Println("test")
 	router := gin.Default()
-	router.GET("/socket", handler.WebsocketHandler)
+	router.GET("/", handler.WebsocketHandler)
 	router.Run(":4242")
 }
