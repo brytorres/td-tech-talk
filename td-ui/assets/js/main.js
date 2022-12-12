@@ -140,14 +140,14 @@ sizeSlider.addEventListener("input", (event) => {
 })
 
 speedSlider.addEventListener("input", (event) => {
-  console.log(event)
+  console.log(event);
   const pulsePlanetMessage = {
     action: "publish",
     topic: "planets",
     message: `action:change,name:${myPlanet},speed:${event.target.value}`,
   };
   ws.send(JSON.stringify(pulsePlanetMessage));
-})
+});
 
 /**
  * List Planets
