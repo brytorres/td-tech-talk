@@ -1,0 +1,11 @@
+{
+    "name": "TouchDesigner Tech Talk Server",
+    "description": "Go server running WebSockets",
+    "keywords": [
+      "touchdesigner",
+      "go",
+      "websockets"
+    ],
+    "website": "http://github.com/brytorres/td-tech-talk",
+    "repository": "http://github.com/brytorres/td-tech-talk"
+  }
