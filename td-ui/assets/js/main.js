@@ -1,6 +1,6 @@
 import '../css/style.css'
 
-const ws = new WebSocket("ws://localhost:4242/");
+const ws = new WebSocket("ws://172.20.197.52:4242/");
 
 const createSection = document.getElementById("create-planet");
 const changeSection = document.getElementById("change-planet");
