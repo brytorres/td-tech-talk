@@ -1,6 +1,6 @@
 import '../css/style.css'
 
-const ws = new WebSocket("ws://172.20.197.52:4242/");
+const ws = new WebSocket("ws://172.30.176.194:4242/");
 
 const createSection = document.getElementById("create-planet");
 const changeSection = document.getElementById("change-planet");
@@ -48,7 +48,14 @@ ws.addEventListener("closed", (event) => {
   console.log("websocket opened")
 })
 
-
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
 
 /**
  * Creating Planet
@@ -67,7 +74,8 @@ createButton.addEventListener("click", () => {
   // Get planet values
   const name = planetName.value;
   const size = planetSize.value;
-  const color = planetColor.value;
+  const colorRGB = `${hexToRgb(planetColor.value).r}-${hexToRgb(planetColor.value).g}-${hexToRgb(planetColor.value).b}` 
+  const color = colorRGB;
   console.log("Name:", name);
   console.log("Size:", size);
   console.log("Color:", color);
